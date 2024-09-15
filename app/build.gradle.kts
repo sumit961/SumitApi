@@ -1,16 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    //alias(libs.plugins.hilt.android) // Hilt DI plugin
-    //alias(libs.plugins.kotlin.kapt)  // Kotlin Annotation Processor for Hilt
 }
 
 android {
-    namespace = "com.example.sumitapi"
+    namespace = "com.example.test8"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.sumitapi"
+        applicationId = "com.example.test8"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -35,18 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    buildFeatures {
-        viewBinding = true // enables view binding
-    }
-
-    buildFeatures {
-        //noinspection DataBindingWithoutKapt
-        dataBinding = true
-    }
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -55,11 +45,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.retrofit) // Retrofit for API calls
-    implementation(libs.gson.converter) // Gson converter for Retrofit
-    implementation(libs.recyclerview) // RecyclerView
-    //implementation(libs.hilt.android) // Hilt for Dependency Injection
-   // kapt(libs.hilt.android-compiler) // Kotlin Annotation Processor for Hilt
-    implementation(libs.navigation.fragment) // Navigation Component
-    implementation(libs.navigation.ui) // Navigation UI
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // OkHttp (for logging)
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.4")
+
+    // Coroutine support for Retrofit
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
 }
