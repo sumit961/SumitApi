@@ -15,13 +15,24 @@ class DetailsActivity : AppCompatActivity() {
         val entity: Entity? = intent.getParcelableExtra("ENTITY")
 
         // Find views
-        val property1TextView: TextView = findViewById(R.id.property1TextView)
-        val property2TextView: TextView = findViewById(R.id.property2TextView)
-        val descriptionTextView: TextView = findViewById(R.id.descriptionTextView)
+        val artistName: TextView = findViewById(R.id.artistName)
+        val albumTitle: TextView = findViewById(R.id.albumTitle)
+        val releaseYear: TextView = findViewById(R.id.releaseYear)
+        val genre: TextView = findViewById(R.id.genre)
+        val trackCount: TextView = findViewById(R.id.trackCount)
+        val popularTrack: TextView = findViewById(R.id.popularTrack)
+        val description: TextView = findViewById(R.id.description)
+
 
         // Set text from the entity
-        property1TextView.text = entity?.artistName
-        property2TextView.text = entity?.albumTitle
-        descriptionTextView.text = entity?.description
+        artistName.text = "Artist Name: ${entity?.artistName}"
+        albumTitle.text = "Album Title: ${entity?.albumTitle}"
+        releaseYear.text = "Release Year: ${entity?.releaseYear}"
+        genre.text = "Genre: ${entity?.genre}"
+        trackCount.text = "Track Count: ${entity?.trackCount}"
+        popularTrack.text = "Popular Track: ${entity?.popularTrack}"
+        description.text = "Description: ${entity?.description}"
+
+
     }
 }

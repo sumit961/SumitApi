@@ -24,6 +24,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/textView2"
         android:padding="16dp"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        />
 
 </RelativeLayout>
