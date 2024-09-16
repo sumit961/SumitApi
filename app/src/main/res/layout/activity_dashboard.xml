@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TextView as a dashboard title, aligned to the top -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Dashboard"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:textColor="@android:color/black" />
+
+    <!-- RecyclerView below the title -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView2"
+        android:padding="16dp"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>
