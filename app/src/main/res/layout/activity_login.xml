@@ -4,12 +4,28 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- Title at the top -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MyVu"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Email addresses below the title -->
+
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_below="@+id/titleTextView"
+        android:layout_marginTop="15dp"
         android:hint="Username"
-        android:inputType="text"/>
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -19,13 +35,48 @@
         android:hint="Password"
         android:inputType="textPassword"/>
 
-    <Button
+    <!-- Footer at the bottom -->
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordEditText"
-        android:text="Login"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/button"
         android:minHeight="48dp"
-        android:padding="12dp"/>
+        android:padding="12dp"
+        android:text="Login"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Made by Sumit"
+        android:textSize="14sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Email addresses below the footer -->
+    <TextView
+        android:id="@+id/footerEmailTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="s8117110@live.vu.edu.au"
+        android:textSize="14sp"
+        android:layout_above="@id/footerTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/footerEmailTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xumityadav10@gmail.com"
+        android:textSize="14sp"
+        android:layout_above="@id/footerEmailTextView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dp"/>
 
 </RelativeLayout>
