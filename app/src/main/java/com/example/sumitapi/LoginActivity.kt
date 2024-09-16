@@ -1,12 +1,14 @@
 package com.example.sumitapi
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sumitapi.viewmodel.DashboardActivity
 import com.example.sumitapi.network.LoginRequest
-import com.example.sumitapi.network.RetrofitClient
 import com.example.test8.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -44,8 +46,12 @@ class LoginActivity : AppCompatActivity() {
                 val response = RetrofitClient.apiService.login(LoginRequest(username, password))
                 if (response.isSuccessful) {
                     val keypass = response.body()?.keypass
-                    runOnUiThread {
-                        Toast.makeText(this@LoginActivity, "Login successful! Keypass: $keypass", Toast.LENGTH_LONG).show()
+                    keypass?.let {
+                        val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
+                        intent.putExtra("KEYPASS", it)
+                        startActivity(intent)
+                        Log.e("LoginActivity", "login sucess")
+                        finish()
                     }
                 } else {
                     runOnUiThread {
@@ -59,8 +65,10 @@ class LoginActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 runOnUiThread {
                     Toast.makeText(this@LoginActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Log.e("LoginActivity", "Error: ${e.message}")
                 }
             }
         }
     }
+
 }

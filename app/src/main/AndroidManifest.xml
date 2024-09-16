@@ -24,8 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".DetailsActivity" />
+        <activity android:name="com.example.sumitapi.viewmodel.DashboardActivity" />
+        <activity android:name="com.example.sumitapi.viewmodel.DetailsActivity" />
     </application>
 
 </manifest>
